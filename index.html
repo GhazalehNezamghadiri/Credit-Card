@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+    <link rel="stylesheet" href="assets/css/fontello.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+           font-family: "Work Sans", sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #a7c5f2, #6a9bd3);
+
+
+               >.myfoot {
+                width: 170px;
+                height: 170px;
+                position: fixed;
+                bottom: 15px;
+                right: 0;
+                z-index: 999;
+                /* border: 1px solid black; */
+
+
+                &:hover {
+
+                    >img,
+                    &::before {
+                        animation-play-state: paused;
+                    }
+
+                    >figcaption {
+                        top: -10px;
+                        opacity: 1;
+                    }
+
+                    >a {
+                        right: 100%;
+                        opacity: 1;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    display: flex;
+                    position: absolute;
+                    width: 145px;
+                    height: 145px;
+                    border-radius: 50%;
+                    bottom: 10px;
+                    right: 8px;
+                    ;
+                    background-color: #20496aa0;
+                    animation: foot1 linear infinite alternate 6s;
+
+                }
+
+                >img {
+                    width: 125px;
+                    height: 125px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    animation: foot2 linear infinite alternate 6s;
+                    position: absolute;
+                    bottom: 18px;
+                    right: 16px;
+                    z-index: 999;
+                }
+
+                >a {
+
+                    position: absolute;
+                    right: 100px;
+                    z-index: 99;
+                    right: 50%;
+                    font-size: 30px;
+                    color: #20496a;
+                    transition: .4s;
+                    opacity: 0;
+
+                    &:nth-of-type(1) {
+                        top: 0;
+                        font-size: 28px;
+                    }
+
+                    &:nth-of-type(2) {
+                        top: 28%;
+                        font-size: 28px;
+                        transition-delay: .1s;
+                    }
+
+                    &:nth-of-type(3) {
+                        top: 56%;
+                        font-size: 31px;
+                        transition-delay: .2s;
+                    }
+
+                    &:nth-of-type(4) {
+                        top: 84%;
+                        font-size: 22px;
+                        transition-delay: .3s;
+
+                    }
+
+
+
+                }
+
+                >figcaption {
+                    width: 100%;
+                    position: absolute;
+                    text-align: center;
+                    color: #20496a;
+                    text-transform: capitalize;
+                    top: 0;
+                    z-index: 90;
+                    transition: .4s;
+                    font-weight: bold;
+                    transition-delay: .2s;
+                    opacity: 0;
+                }
+            }
+
+        }
+        
+
+        .card {
+            position: relative;
+            bottom: 20%;
+            background: linear-gradient(to right, #4f94d7, #2e6e9f);
+            color: white;
+            border-radius: 15px;
+            width: 360px;
+            padding: 20px;
+            z-index: 40;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .up {
+            width: 50px;
+            height: 35px;
+            background-color: #b9d6f5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .cardNumber {
+            margin-bottom: 15px;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .cardInfo {
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            font-size: 14px;
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                overflow: hidden;
+
+                &:last-child {
+                    align-items: end;
+                }
+
+                >.label {
+                    font-size: 11px;
+                    color: #e0f1ff;
+                }
+            }
+        }
+
+        .cvv {
+            margin-top: 20px;
+            height: 30px;
+            text-align: right;
+
+            >.label {
+                font-size: 11px;
+                color: #e0f1ff;
+            }
+
+            >span {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+
+        .all {
+            position: absolute;
+            background: linear-gradient(to top left, #e0f1ff, #b9d6f5);
+            width: 40%;
+            border-radius: 20px;
+            padding: 50px;
+            height: 40%;
+            top: 35%;
+        }
+
+        .info {
+            margin-top: 15%;
+            border-radius: 20px;
+            height: 200px;
+
+            * {
+                margin-bottom: 15px;
+            }
+
+            >.label1 {
+                color: rgba(0, 0, 0, 0.486);
+                width: 100%;
+                font-weight: bold;
+                font-size: 12px;
+                color: #3b89b9;
+            }
+
+            >.number {
+                display: flex;
+                gap: 5px;
+                justify-content: space-between;
+
+                >input {
+                    width: 22%;
+                    height: 25px;
+                    border-radius: 5px;
+                    text-align: center;
+                    margin-top: 5px;
+                    border: 1px solid #6a9bd3;
+                    background-color: #e6f2ff;
+                }
+            }
+
+            .box {
+                display: flex;
+                height: 5px;
+
+                >.label2 {
+                    color: rgba(0, 0, 0, 0.486);
+                    width: 54%;
+                    font-weight: bold;
+                    font-size: 12px;
+                    color: #3b89b9;
+                }
+
+                >.label3 {
+                    color: rgba(0, 0, 0, 0.486);
+                    width: 46%;
+                    font-weight: bold;
+                    font-size: 12px;
+                    color: #3b89b9;
+                }
+            }
+
+            >.name {
+                display: flex;
+                justify-content: space-between;
+
+                >input {
+                    border-radius: 5px;
+                    height: 25px;
+                    width: 45%;
+                    border: 1px solid #6a9bd3;
+                    background-color: #e6f2ff;
+                }
+            }
+
+            >.cvv2 {
+                display: flex;
+                flex-wrap: wrap;
+                width: 30%;
+                height: 40px;
+
+                >.label4 {
+                    font-weight: bold;
+                    font-size: 12px;
+                    height: 5px;
+                    color: #3b89b9;
+                }
+
+                >input {
+                    border-radius: 5px;
+                    height: 25px;
+                    border: 1px solid #6a9bd3;
+                    background-color: #e6f2ff;
+                }
+            }
+        }
+
+
+           @keyframes foot1 {
+            0% {
+                border-radius: 37% 63% 41% 59% / 56% 34% 66% 44%;
+            }
+
+            50% {
+                border-radius: 64% 36% 63% 37% / 37% 59% 41% 63%;
+            }
+
+            100% {
+                border-radius: 30% 70% 51% 49% / 62% 41% 59% 38%;
+            }
+        }
+
+        @keyframes foot2 {
+            0% {
+                border-radius: 30% 70% 51% 49% / 62% 41% 59% 38%;
+            }
+
+            50% {
+                border-radius: 37% 63% 41% 59% / 56% 34% 66% 44%;
+            }
+
+            100% {
+                border-radius: 64% 36% 63% 37% / 37% 59% 41% 63%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="up"></div>
+        <div class="cardNumber" id="number">
+        </div>
+
+        <div class="cardInfo">
+            <div>
+                <span class="label">Cardholder Name</span>
+                <span class="namee" id="name"></span>
+            </div>
+            <div>
+                <span class="label">Valid Thru</span>
+                <span id="date"></span>
+            </div>
+        </div>
+
+        <div class="cvv">
+            <div class="label">Security Code (CVV2)</div>
+            <span id="cvv2"></span>
+        </div>
+
+    </div>
+
+    <div class="all">
+        <div class="info">
+
+            <label class="label1" for="">Card Number</label>
+            <div class="number">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </div>
+
+            <div class="box">
+                <label class="label2" for="">Cardholder Name</label>
+                <label class="label3" for="">Expiration (mm/yy)</label>
+            </div>
+            <div class="name">
+                <input type="text">
+                <input type="text">
+            </div>
+
+
+            <div class="cvv2">
+                <label class="label4" for="">CVV2</label>
+                <input type="text">
+            </div>
+        </div>
+
+    </div>
+
+     <figure class="myfoot">
+            <img src="assets/img/ghazall.jfif" alt="">
+            <a href="https://www.linkedin.com/in/ghazaleh-nezamghadiri-06b626302/" target="_blank"><i
+                    class="icon-icons8-linkedin"></i></a>
+            <a href="https://github.com/GhazalehNezamghadiri" target="_blank"><i class="icon-icons8-github"></i></a>
+            <a href="https://www.instagram.com/ghazale.ghadiri/?hl=en" target="_blank"><i
+                    class=" icon-icons8-instagram"></i></a>
+            <a href="mailto:ghazalehghadiri2@gmail.com" target="_blank"><i class="icon-mail"></i></a>
+            <figcaption>ghazaleh ghadiri</figcaption>
+
+        </figure>
+</body>
+
+<script>
+    const show = document.getElementById('number')
+    const num = document.querySelectorAll('.number>input')
+    const show3 = document.getElementById('cvv2')
+    const show1 = document.getElementById('name')
+    const show2 = document.getElementById('date')
+    const nameInput = document.querySelector('.name input:first-child')
+    const dateInput = document.querySelector('.name input:last-child')
+    const cvvInput = document.querySelector('.cvv2>input')
+
+    num.forEach((val, i) => {
+        val.addEventListener('keyup', () => {
+            if (val.value.length > 3) {
+                val.value = val.value.slice(0, 4)
+                if (i < 3) {
+                    val.nextElementSibling.focus()
+                } else {
+                    nameInput.focus()
+                }
+            } else if (val.value.length == 0 && i != 0) {
+                val.previousElementSibling.focus()
+
+            }
+
+            let temp = ''
+            num.forEach((item) => {
+                if (item.value.length > 3) {
+                    temp += item.value + ' - '
+                } else {
+                    temp += item.value
+                }
+            })
+
+            show.innerHTML = temp.length < 25 ? temp : temp.slice(0, 25)
+        })
+    })
+
+    nameInput.addEventListener('input', () => {
+        show1.textContent = nameInput.value
+    })
+
+    dateInput.addEventListener('keyup', () => {
+        let val = dateInput.value
+
+        if (val.length == 2 && !val.includes('/')) {
+            dateInput.value = val + ' / '
+        }
+        show2.textContent = dateInput.value
+    })
+
+    cvvInput.addEventListener('input', () => {
+        show3.textContent = cvvInput.value
+    })
+
+</script>
+
+</html>
