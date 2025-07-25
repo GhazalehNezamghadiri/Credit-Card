@@ -1,5 +1,7 @@
 # Credit-Card
 
+## Credit card form made with JavaScript — just the right mix of logic and style
+
 -[Demo Project](https://ghazalehnezamghadiri.github.io/Credit-Card/) 
 
 -Developed by Ghazaleh Nezamghadiri
